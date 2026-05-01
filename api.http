@@ -1,0 +1,59 @@
+@accessToken = Bearer {{login.response.body.bearer.access}}
+@refreshToken = {{login.response.body.bearer.refresh}}
+@baseUrl = http://localhost:8000
+
+###
+
+# @name login
+post {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+    "username":"normal",
+    "password":"aA*12345"
+}
+
+### 
+
+# @name refreshToken
+post {{baseUrl}}/auth/refresh
+Content-Type: application/json
+
+{   
+    "refresh":" {{refreshToken}}"
+}
+
+###
+
+# @name users
+get {{baseUrl}}/users
+Content-Type: application/json
+Authorization: {{accessToken}}
+
+
+###
+
+# @name cars
+get {{baseUrl}}/cars
+Content-Type: application/json
+Authorization: {{accessToken}}
+
+{
+    "startDate": "2025-10-10",
+    "endDate": "2025-10-15"
+}
+
+###
+
+# @name reservations
+post {{baseUrl}}/reservations/
+Content-Type: application/json
+Authorization: {{accessToken}}
+
+{
+    "carId": "64c5ed12345a12345678901c",
+    "startDate": "2027-11-10",
+    "endDate": "2027-11-15"
+}
+
+###

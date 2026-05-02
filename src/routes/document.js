@@ -16,18 +16,41 @@ router.all('/', (req, res) => {
     })
 })
 
-// JSON:
+// JSON (require so the file is bundled into the serverless function):
+const swaggerJson = require('../configs/swagger.json')
 router.use('/json', (req, res) => {
-    res.sendFile(`/src/configs/swagger.json`, { root: '.' })
+    res.json(swaggerJson)
 })
 
 // Redoc:
 const redoc = require('redoc-express')
-router.use('/redoc', redoc({ specUrl: '/documents/json', title: 'API Docs' }))
+router.use('/redoc', redoc({ specUrl: '/document/json', title: 'API Docs' }))
 
-// Swagger:
-const swaggerUi = require('swagger-ui-express')
-router.use('/swagger', swaggerUi.serve, swaggerUi.setup(require('../configs/swagger.json'), { swaggerOptions: { persistAuthorization: true } }))
+// Swagger UI (CDN-based — works on serverless):
+router.get('/swagger', (req, res) => {
+    res.send(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rent-A-Car API — Swagger UI</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css" />
+</head>
+<body>
+  <div id="swagger-ui"></div>
+  <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-standalone-preset.js"></script>
+  <script>
+    window.ui = SwaggerUIBundle({
+      url: '/document/json',
+      dom_id: '#swagger-ui',
+      presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+      layout: 'StandaloneLayout',
+      persistAuthorization: true,
+    });
+  </script>
+</body>
+</html>`)
+})
 
 /* ------------------------------------------------------- */
 module.exports = router

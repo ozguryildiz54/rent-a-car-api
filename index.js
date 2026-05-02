@@ -47,6 +47,15 @@ app.get("/", (req, res) => {
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Rent-A-Car API — Ozgur Yildiz</title>
+<meta property="og:title" content="🚗 Rent-A-Car API — Live Demo with Swagger" />
+<meta property="og:description" content="REST API for a car rental platform — Express + MongoDB + JWT + Nodemailer + Swagger. Reservation date-overlap detection. Demo: demo@demo.com / Demo1234!" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&h=630&fit=crop" />
+<meta property="og:url" content="https://ozguryildiz-rentacar-api.vercel.app" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="🚗 Rent-A-Car API — Live Demo with Swagger" />
+<meta name="twitter:description" content="REST API: Express + MongoDB + JWT + Swagger. Reservation logic with date-overlap. Demo creds on page." />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&h=630&fit=crop" />
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:linear-gradient(135deg,#1e3a8a 0%,#1e40af 100%);min-height:100vh;padding:2rem 1rem;color:#1a1a1a}

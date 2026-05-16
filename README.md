@@ -1,6 +1,6 @@
 # Rent-A-Car API
 
-REST API for a car rental platform — Express + MongoDB + JWT + Nodemailer + Swagger.
+REST API for a car rental platform. Express + MongoDB + JWT + Nodemailer + Swagger.
 
 > 🔗 **Live API:** https://ozguryildiz-rentacar-api.vercel.app
 > 📘 **Live Swagger UI:** https://ozguryildiz-rentacar-api.vercel.app/document/swagger
@@ -14,7 +14,7 @@ REST API for a car rental platform — Express + MongoDB + JWT + Nodemailer + Sw
 - Email notifications (Nodemailer)
 - Unique field validation (mongoose-unique-validator)
 - Pagination, sorting, search, filtering middleware
-- Reservation logic — date overlap check, auto amount calculation
+- Reservation logic: date overlap check, auto amount calculation
 - Swagger + Redoc API documentation
 
 ## 🧰 Stack
@@ -29,7 +29,7 @@ curl -X POST https://ozguryildiz-rentacar-api.vercel.app/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email":"demo@demo.com","password":"Demo1234!"}'
 
-# List cars (auth required — paste token from login above)
+# List cars (auth required, paste token from login above)
 curl https://ozguryildiz-rentacar-api.vercel.app/cars \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```

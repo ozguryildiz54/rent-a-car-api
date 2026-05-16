@@ -1,7 +1,4 @@
 "use strict";
-/* -------------------------------------------------------
-    | FULLSTACK TEAM | NODEJS / EXPRESS |
-------------------------------------------------------- */
 
 const Car = require("../models/car");
 const dateValidation = require('../helpers/dateValidation');
@@ -103,12 +100,7 @@ module.exports = {
         in: 'body',
         required: true,
         schema: {
-            "username": "test",
-            "password": "1234",
-            "email": "test@site.com",
-            "isActive": true,
-            "isStaff": false,
-            "isAdmin": false,
+            $ref: "#/definitions/Car"
         }
       }
     */

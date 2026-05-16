@@ -37,10 +37,11 @@ curl https://ozguryildiz-rentacar-api.vercel.app/cars \
 ## 🛠 Run Locally
 
 ```bash
-git clone https://github.com/ozguryildiz54/rent-a-car-api.git
+git clone https://github.com/yldzozgur/rent-a-car-api.git
 cd rent-a-car-api
 npm install
-cp .env-sample .env  # add MONGODB connection string + JWT secrets
+cp .env-sample .env   # then fill in MONGODB URI + JWT secrets
+mkdir logs
 npm run dev
 ```
 
@@ -53,6 +54,7 @@ App runs on `http://localhost:8000`.
 | POST | `/auth/login` | Login |
 | POST | `/auth/register` | Register |
 | POST | `/auth/refresh` | Refresh JWT |
+| POST | `/auth/logout` | Logout |
 | GET/POST/PUT/DELETE | `/users` | User CRUD (admin/staff) |
 | GET/POST/PUT/DELETE | `/cars` | Car CRUD |
 | GET/POST/PUT/DELETE | `/reservations` | Reservation CRUD |

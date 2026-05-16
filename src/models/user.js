@@ -1,7 +1,5 @@
 "use strict";
-/* -------------------------------------------------------
-    | FULLSTACK TEAM | NODEJS / EXPRESS |
-/* ------------------------------------------------------- *
+/* Sample documents:
 {
     "username": "test",
     "password": "1234",

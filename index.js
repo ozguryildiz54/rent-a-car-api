@@ -1,7 +1,4 @@
 "use strict";
-/* -------------------------------------------------------
-    | FULLSTACK TEAM | NODEJS / EXPRESS |
-------------------------------------------------------- */
 const express = require("express");
 const app = express();
 

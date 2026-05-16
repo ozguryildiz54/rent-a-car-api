@@ -1,7 +1,5 @@
 "use strict";
-/* -------------------------------------------------------
-    | FULLSTACK TEAM | NODEJS / EXPRESS |
-/* ------------------------------------------------------- *
+/* Sample documents:
 {
     "plateNumber": "34ABC123",
     "brand": "Ford",

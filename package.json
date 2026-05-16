@@ -1,6 +1,6 @@
 {
   "title": "Rent A Car API",
-  "name": "renacarapi",
+  "name": "rent-a-car-api",
   "version": "1.0.0",
   "description": "Rent A Car Management System",
   "main": "index.js",
@@ -10,8 +10,9 @@
     "dev": "node swaggerAutogen && nodemon index.js"
   },
   "keywords": [],
-  "author": "CourseName",
-  "license": "ISC Licence",
+  "author": "Ozgur Yildiz",
+  "email": "ozguryildiz0@outlook.com",
+  "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^5.1.0",

@@ -1,7 +1,4 @@
 "use strict";
-/* -------------------------------------------------------
-| FULLSTACK TEAM | NODEJS / EXPRESS |
-------------------------------------------------------- */
 
 const Reservation = require("../models/reservation");
 const CustomError = require("../helpers/customError");
@@ -47,7 +44,7 @@ module.exports = {
   create: async (req, res) => {
     /*
       #swagger.tags = ["Reservations"]
-      #swagger.summary = "Create a Car"
+      #swagger.summary = "Create a Reservation"
       #swagger.parameters['body'] = {
       in: 'body',
       required: true,
@@ -141,17 +138,12 @@ module.exports = {
         in: 'body',
         required: true,
         schema: {
-            "username": "test",
-            "password": "1234",
-            "email": "test@site.com",
-            "isActive": true,
-            "isStaff": false,
-            "isAdmin": false,
+            $ref: "#/definitions/Reservation"
         }
       }
     */
 
-    req.body.updatorId = currentUserId;
+    req.body.updatorId = req.user._id;
     const data = await Reservation.findByIdAndUpdate(req.params.id, req.body, { runValidators: true, new: true });
 
     res.status(202).send({

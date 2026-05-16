@@ -1,9 +1,6 @@
 "use strict";
 
 
-/* -------------------------------------------------------
-| FULLSTACK TEAM | NODEJS / EXPRESS |
-------------------------------------------------------- */
 // Middleware: permissions
 const CustomError = require("../helpers/customError");
 const message = "Your account is not active. Please contact support.";

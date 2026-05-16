@@ -1,7 +1,4 @@
 "use strict";
-/* -------------------------------------------------------
-    | FULLSTACK TEAM | NODEJS / EXPRESS |
-------------------------------------------------------- */
 // sync():
 const { mongoose } = require("../configs/dbConnection");
 const Reservation = require("../models/reservation");

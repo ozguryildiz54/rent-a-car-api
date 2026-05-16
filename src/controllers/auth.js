@@ -1,7 +1,4 @@
 "use strict"
-/* -------------------------------------------------------
-    | FULLSTACK TEAM | NODEJS / EXPRESS |
-------------------------------------------------------- */
 const CustomError = require('../helpers/customError');
 const passwordValidation = require('../helpers/passwordValidation');
 const User = require('../models/user');
